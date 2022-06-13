@@ -1,11 +1,11 @@
 <template>
   <div>
-    <header>
+    <header class="title">
       <!-- <h1>{{ capitalize }} Page</h1>
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/product">Product</NuxtLink> -->
       <h1>
-        <NuxtLink to="/"> Nuxt Shopping </NuxtLink>
+        <NuxtLink class="logo" to="/"> Nuxt Shopping </NuxtLink>
       </h1>
     </header>
     <Nuxt />
@@ -23,4 +23,18 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+/* 헤더 관련 style */
+header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+.logo {
+  font-weight: 900;
+}
+.logo:visited {
+  color: inherit;
+}
+</style>
