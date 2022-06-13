@@ -11,7 +11,9 @@
       <div class="side-panel">
         <p class="name">Name: {{ product.name }}</p>
         <p class="price">Price: {{ product.price }}</p>
-        <button type="button" @click="addToCart">Add to Cart</button>
+        <button type="button" @click="addToCart(product.id)">
+          Add to Cart
+        </button>
       </div>
     </div>
   </div>
@@ -30,8 +32,10 @@ export default {
     return { product }
   },
   methods: {
-    addToCart() {
-      console.log('addToCart')
+    addToCart(id) {
+      // console.log(id)
+      // id값을 cart에 추가해야 한다.
+      this.$router.push('/cart')
     },
   },
 }
