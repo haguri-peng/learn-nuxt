@@ -1,10 +1,12 @@
 <template>
   <div>
     <header>
-      <h1>{{ capitalize }} Page</h1>
+      <!-- <h1>{{ capitalize }} Page</h1>
       <NuxtLink to="/">Home</NuxtLink>
-      <NuxtLink to="/main">Main</NuxtLink>
-      <NuxtLink to="/product">Product</NuxtLink>
+      <NuxtLink to="/product">Product</NuxtLink> -->
+      <h1>
+        <NuxtLink to="/"> Nuxt Shopping </NuxtLink>
+      </h1>
     </header>
     <Nuxt />
   </div>
