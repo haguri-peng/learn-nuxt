@@ -1,24 +1,11 @@
 import axios from 'axios'
 
-const instance = axios.create({
-  baseURL: 'http://localhost:3000',
-})
-
-function fetchProducts() {
-  return instance.get('/products')
-}
-
-function fetchProductsByKeyword(keyword) {
-  // return instance.get(`/products?name_like=${keyword}`)
-  return instance.get('/products', {
-    params: {
-      name_like: keyword,
-    },
+// axios 초기화
+function createInstance(url) {
+  return axios.create({
+    baseURL: `http://localhost:3000/${url}`,
   })
 }
 
-function fetchProductById(id) {
-  return instance.get(`/products/${id}`)
-}
-
-export { fetchProducts, fetchProductsByKeyword, fetchProductById }
+export const products = createInstance('products')
+export const carts = createInstance('carts')
