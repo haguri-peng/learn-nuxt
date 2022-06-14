@@ -22,12 +22,15 @@
           <span>{{ product.price }}</span>
         </li>
       </ul>
+      <div class="cart-wrapper">
+        <button class="btn" @click="moveToCart">Go to Cart</button>
+      </div>
     </main>
   </div>
 </template>
 
 <script>
-import { fetchProducts, fetchProductsByKeyword } from '@/api/index'
+import { fetchProducts, fetchProductsByKeyword } from '@/api/products'
 import SearchInput from '@/components/SearchInput.vue'
 
 export default {
@@ -65,6 +68,9 @@ export default {
         price: `$${item.price}`,
       }))
     },
+    moveToCart() {
+      this.$router.push('/cart')
+    },
   },
 }
 </script>
@@ -100,5 +106,7 @@ export default {
   height: 40px;
   font-size: 1rem;
   font-weight: 500;
+  background-color: palegreen;
+  cursor: pointer;
 }
 </style>
