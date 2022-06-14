@@ -183,16 +183,10 @@
   ],
   "carts": [
     {
-      "id": 1,
-      "name": "Intelligent Metal Mouse",
-      "price": "84.00",
-      "imageUrl": "http://placeimg.com/640/480/fashion"
-    },
-    {
-      "id": 7,
-      "name": "Awesome Concrete Shirt",
-      "price": "165.00",
-      "imageUrl": "http://placeimg.com/640/480/fashion"
+      "id": 21,
+      "name": "Handcrafted Soft Pizza",
+      "price": "$277.00",
+      "imageUrl": "http://placeimg.com/640/480/fashion?random=0.7673567323742236"
     }
   ]
 }
