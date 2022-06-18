@@ -1,6 +1,8 @@
 import _ from 'lodash'
 import { fetchCartItems } from '@/api/carts'
 
+export const FETCH_CART_ITEMS = 'FETCH_CART_ITEMS'
+
 export const state = () => ({
   cartItems: [],
 })
@@ -28,9 +30,11 @@ export const mutations = {
 }
 
 export const actions = {
-  getCartItems(context) {
-    fetchCartItems().then(({ data }) => {
-      context.commit('setCartItems', data)
-    })
+  async [FETCH_CART_ITEMS]({ commit }) {
+    const { data } = await fetchCartItems()
+    commit('setCartItems', data)
   },
+  // async nuxtServerInit(storeContext, nuxtContext) {
+  //   await storeContext.dispatch(FETCH_CART_ITEMS)
+  // },
 }
