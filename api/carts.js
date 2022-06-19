@@ -8,4 +8,12 @@ function fetchCartItems() {
   return carts.get('/')
 }
 
-export { createCartItem, fetchCartItems }
+function updateQT(id, objQuantity) {
+  return carts.patch(`/${id}`, objQuantity)
+}
+
+function deleteCartItem(id) {
+  return carts.delete(`/${id}`)
+}
+
+export { createCartItem, fetchCartItems, updateQT, deleteCartItem }

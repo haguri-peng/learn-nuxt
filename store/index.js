@@ -27,6 +27,15 @@ export const mutations = {
   setCartItems(state, data) {
     state.cartItems = data
   },
+  updateCartItemQt(state, item) {
+    const fIdx = _.findIndex(state.cartItems, ['id', item.id])
+    if (fIdx > -1) {
+      state.cartItems[fIdx].quantity = item.quantity
+    }
+  },
+  deleteCartItem(state, id) {
+    _.remove(state.cartItems, ['id', id])
+  },
 }
 
 export const actions = {

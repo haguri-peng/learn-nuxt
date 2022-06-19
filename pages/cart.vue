@@ -1,8 +1,9 @@
 <template>
   <div class="container">
     <h1 class="list-title">Cart Page</h1>
-    <CartList></CartList>
+    <CartList ref="cartList" @deleteItems="deleteItems" />
     <div class="extra-panel">
+      <button type="button" @click="chkList">Delete</button>
       <button type="button">Purchase</button>
     </div>
   </div>
@@ -11,6 +12,7 @@
 <script>
 // import { FETCH_CART_ITEMS } from '@/store/index'
 import CartList from '@/components/CartList.vue'
+import { deleteCartItem } from '@/api/carts'
 
 export default {
   components: {
@@ -19,6 +21,21 @@ export default {
   // async asyncData({ store }) {
   //   await store.dispatch(FETCH_CART_ITEMS)
   // },
+  methods: {
+    chkList() {
+      this.$refs.cartList.getCheckedList()
+    },
+    async deleteItems(arrId) {
+      // DB와 vuex에서 삭제
+      for (const id of arrId) {
+        deleteCartItem(id)
+        await this.$store.commit('deleteCartItem', id)
+      }
+
+      // this.$router.push('/cart')
+      this.$router.go()
+    },
+  },
 }
 </script>
 
