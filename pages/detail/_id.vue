@@ -27,6 +27,7 @@ export default {
     const product = data
     product.imageUrl = `${product.imageUrl}?random=${Math.random()}`
     product.price = `$${product.price}`
+    product.quantity = 1
     // console.log(product)
     return { product }
   },
