@@ -33,7 +33,10 @@ export default {
       }
 
       // this.$router.push('/cart')
-      this.$router.go()
+      // this.$router.go()
+
+      // Component forced-rendering
+      this.$refs.cartList.$forceUpdate()
     },
   },
 }
