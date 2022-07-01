@@ -53,8 +53,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content:
-            'http://placeimg.com/640/480/fashion?random=0.7673567323742236',
+          content: 'http://placeimg.com/640/480/fashion',
         },
       ],
     }
